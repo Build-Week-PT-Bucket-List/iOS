@@ -66,6 +66,8 @@
 		A3EE621D2357FD0800510D23 /* BucketList */ = {
 			isa = PBXGroup;
 			children = (
+				A3EE623E23595BDF00510D23 /* Network Controllers */,
+				A3EE623D23595BDB00510D23 /* Models */,
 				A3EE621E2357FD0800510D23 /* AppDelegate.swift */,
 				A3EE62202357FD0800510D23 /* SceneDelegate.swift */,
 				A3EE62222357FD0800510D23 /* ViewController.swift */,
@@ -80,6 +82,20 @@
 				A3EE623B235814F900510D23 /* PostProperties.storyboard */,
 			);
 			path = BucketList;
+			sourceTree = "<group>";
+		};
+		A3EE623D23595BDB00510D23 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A3EE623E23595BDF00510D23 /* Network Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Network Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
