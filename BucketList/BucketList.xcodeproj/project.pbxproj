@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95357EAA23595B5400A0B239 /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95357EA923595B5400A0B239 /* AddImageViewController.swift */; };
+		95357EAC23595B6500A0B239 /* AddVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95357EAB23595B6500A0B239 /* AddVideoViewController.swift */; };
+		95357EAE23595B7E00A0B239 /* AddJournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95357EAD23595B7E00A0B239 /* AddJournalEntryViewController.swift */; };
+		95357EB023595BAD00A0B239 /* AddVoiceMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95357EAF23595BAC00A0B239 /* AddVoiceMemoViewController.swift */; };
 		A3EE621F2357FD0800510D23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE621E2357FD0800510D23 /* AppDelegate.swift */; };
 		A3EE62212357FD0800510D23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE62202357FD0800510D23 /* SceneDelegate.swift */; };
 		A3EE62232357FD0800510D23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE62222357FD0800510D23 /* ViewController.swift */; };
@@ -21,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95357EA923595B5400A0B239 /* AddImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageViewController.swift; sourceTree = "<group>"; };
+		95357EAB23595B6500A0B239 /* AddVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVideoViewController.swift; sourceTree = "<group>"; };
+		95357EAD23595B7E00A0B239 /* AddJournalEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalEntryViewController.swift; sourceTree = "<group>"; };
+		95357EAF23595BAC00A0B239 /* AddVoiceMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVoiceMemoViewController.swift; sourceTree = "<group>"; };
 		A3EE621B2357FD0800510D23 /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3EE621E2357FD0800510D23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3EE62202357FD0800510D23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +55,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95357EA723595AAB00A0B239 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				95357EA823595AB700A0B239 /* PostPropertyViewControllers */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		95357EA823595AB700A0B239 /* PostPropertyViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				95357EA923595B5400A0B239 /* AddImageViewController.swift */,
+				95357EAB23595B6500A0B239 /* AddVideoViewController.swift */,
+				95357EAD23595B7E00A0B239 /* AddJournalEntryViewController.swift */,
+				95357EAF23595BAC00A0B239 /* AddVoiceMemoViewController.swift */,
+			);
+			path = PostPropertyViewControllers;
+			sourceTree = "<group>";
+		};
 		A3EE62122357FD0700510D23 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +93,7 @@
 		A3EE621D2357FD0800510D23 /* BucketList */ = {
 			isa = PBXGroup;
 			children = (
+				95357EA723595AAB00A0B239 /* ViewControllers */,
 				A3EE621E2357FD0800510D23 /* AppDelegate.swift */,
 				A3EE62202357FD0800510D23 /* SceneDelegate.swift */,
 				A3EE62222357FD0800510D23 /* ViewController.swift */,
@@ -159,8 +187,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3EE62232357FD0800510D23 /* ViewController.swift in Sources */,
+				95357EAC23595B6500A0B239 /* AddVideoViewController.swift in Sources */,
 				A3EE621F2357FD0800510D23 /* AppDelegate.swift in Sources */,
+				95357EB023595BAD00A0B239 /* AddVoiceMemoViewController.swift in Sources */,
+				95357EAA23595B5400A0B239 /* AddImageViewController.swift in Sources */,
 				A3EE62212357FD0800510D23 /* SceneDelegate.swift in Sources */,
+				95357EAE23595B7E00A0B239 /* AddJournalEntryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
