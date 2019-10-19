@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--Home Collection View Controller-->
         <scene sceneID="zxY-Mb-EAR">
             <objects>
-                <collectionViewController id="EOs-ku-Gam" sceneMemberID="viewController">
+                <collectionViewController id="EOs-ku-Gam" customClass="HomeCollectionViewController" customModule="BucketList" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="4s3-eL-keP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,6 +72,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="postImage" destination="gyR-vJ-rMm" id="6X5-w8-4at"/>
+                        <outlet property="postLabel" destination="etb-Rz-3gX" id="1I0-1A-db6"/>
                         <segue destination="VDo-44-hMU" kind="presentation" id="4AE-GM-Cim"/>
                     </connections>
                 </collectionViewController>

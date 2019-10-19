@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6C26F4C1235A9A2F0082861B /* CategoryAddPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C26F4C0235A9A2F0082861B /* CategoryAddPopViewController.swift */; };
 		6C26F4C4235AA3C30082861B /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C26F4C3235AA3C30082861B /* HomeCollectionViewController.swift */; };
+		6C26F4C6235AA7D30082861B /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C26F4C5235AA7D30082861B /* Posts.swift */; };
 		A3EE621F2357FD0800510D23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE621E2357FD0800510D23 /* AppDelegate.swift */; };
 		A3EE62212357FD0800510D23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE62202357FD0800510D23 /* SceneDelegate.swift */; };
 		A3EE62232357FD0800510D23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE62222357FD0800510D23 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		6C26F4C0235A9A2F0082861B /* CategoryAddPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAddPopViewController.swift; sourceTree = "<group>"; };
 		6C26F4C3235AA3C30082861B /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
+		6C26F4C5235AA7D30082861B /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Posts.swift; path = "BucketList/View Controllers/Posts.swift"; sourceTree = SOURCE_ROOT; };
 		A3EE621B2357FD0800510D23 /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3EE621E2357FD0800510D23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3EE62202357FD0800510D23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		A3EE623D23595BDB00510D23 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6C26F4C5235AA7D30082861B /* Posts.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3EE62232357FD0800510D23 /* ViewController.swift in Sources */,
+				6C26F4C6235AA7D30082861B /* Posts.swift in Sources */,
 				A3EE621F2357FD0800510D23 /* AppDelegate.swift in Sources */,
 				6C26F4C1235A9A2F0082861B /* CategoryAddPopViewController.swift in Sources */,
 				6C26F4C4235AA3C30082861B /* HomeCollectionViewController.swift in Sources */,

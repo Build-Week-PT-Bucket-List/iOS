@@ -11,6 +11,11 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class HomeCollectionViewController: UICollectionViewController {
+    
+    // Outlets
+    @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet weak var postLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
