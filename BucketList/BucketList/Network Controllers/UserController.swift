@@ -8,8 +8,22 @@
 
 import Foundation
 
+ enum HTTPMethod: String {
+     case get = "GET"
+     case put = "PUT"
+     case post = "POST"
+     case delete = "DELETE"
+ }
 
-struct Bearer: Codable {
-    var token: String
-    var email: String 
+ enum NetworkError: Error {
+     case noAuth
+     case badAuth
+     case otherError
+     case badData
+     case noDecode
+ }
+
+class UserController {
+    var user: UserResponse.User?
+    var bearer: Bearer?
 }
