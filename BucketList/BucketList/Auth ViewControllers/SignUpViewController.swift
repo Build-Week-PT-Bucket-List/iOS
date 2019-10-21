@@ -10,13 +10,49 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var nameTextField: UITextField!
+    
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
+    var userController: UserController?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func signUpButtonTapped(_ sender: Any) {
+        guard let userController = self.userController else {return}
+         
+         if let name = self.nameTextField.text,
+         !name.isEmpty,
+            let email = self.emailTextField.text, !email.isEmpty,
+             let password = self.passwordTextField.text, !password.isEmpty {
+            let user = User(id: nil, name: name, email: email, password: password, created: nil)
+             
+            userController.signUp(with: user) { (error) in
+                 if let error = error {
+                     NSLog("Error occured during sign up: \(error)")
+                 } else {
+                     DispatchQueue.main.async {
+                         let alertController = UIAlertController(title: "Sign Up Successful", message: "Now please log in", preferredStyle: .alert)
+                         let alertAction = UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                            self.dismiss(animated: true, completion: nil)
+//                             self.performSegue(withIdentifier: "ShowLogInSegue", sender: nil)
+                         })
+                         
+                         alertController.addAction(alertAction)
+                         self.present(alertController, animated: true)
+                 }
+              }
+           }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

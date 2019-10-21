@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--Home Page Collection View Controller-->
         <scene sceneID="zxY-Mb-EAR">
             <objects>
-                <collectionViewController id="EOs-ku-Gam" sceneMemberID="viewController">
+                <collectionViewController id="EOs-ku-Gam" customClass="HomePageCollectionViewController" customModule="BucketList" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="4s3-eL-keP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,7 +48,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="VDo-44-hMU" kind="presentation" id="4AE-GM-Cim"/>
+                        <segue destination="VDo-44-hMU" kind="presentation" identifier="toLanding" id="4AE-GM-Cim"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5Q-WZ-0zK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
