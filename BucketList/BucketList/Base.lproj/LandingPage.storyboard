@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Landing Page View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BucketList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LandingPageViewController" customModule="BucketList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign up "/>
                                 <connections>
-                                    <segue destination="J1X-J6-2Ms" kind="show" id="gZH-Y6-cAg"/>
+                                    <action selector="signUpButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bQy-q4-15W"/>
+                                    <segue destination="J1X-J6-2Ms" kind="show" identifier="toSignUp" id="gZH-Y6-cAg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUF-Ss-zqQ">
@@ -28,7 +29,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log in "/>
                                 <connections>
-                                    <segue destination="1n9-jh-Uuy" kind="show" id="wcW-YB-kyy"/>
+                                    <action selector="logInButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="un6-98-5C7"/>
+                                    <segue destination="1n9-jh-Uuy" kind="show" identifier="toLogIn" id="wcW-YB-kyy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -41,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Landing Nav View Controller-->
         <scene sceneID="coy-CH-jIH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="090-oa-I5I" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="090-oa-I5I" customClass="LandingNavViewController" customModule="BucketList" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nGY-UZ-hjq">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
