@@ -72,8 +72,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="postImage" destination="gyR-vJ-rMm" id="6X5-w8-4at"/>
-                        <outlet property="postLabel" destination="etb-Rz-3gX" id="1I0-1A-db6"/>
+                        <outlet property="categoryImage" destination="gyR-vJ-rMm" id="4lM-TR-Nol"/>
+                        <outlet property="categoryName" destination="etb-Rz-3gX" id="hzK-UB-iPu"/>
                         <segue destination="VDo-44-hMU" kind="presentation" id="4AE-GM-Cim"/>
                     </connections>
                 </collectionViewController>
@@ -143,6 +143,9 @@
                                                 <color key="backgroundColor" red="0.64313725489999995" green="0.59999999999999998" blue="0.53725490200000003" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Add Image"/>
+                                                <connections>
+                                                    <action selector="addImageButton:" destination="hsN-Ur-p3A" eventType="touchUpInside" id="fYL-nh-rCm"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Category Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YwR-Kc-F8y">
                                                 <rect key="frame" x="0.0" y="190" width="339" height="34"/>
@@ -155,7 +158,7 @@
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Save"/>
                                                 <connections>
-                                                    <action selector="popSaveTapped:" destination="hsN-Ur-p3A" eventType="touchUpInside" id="WVv-51-Kze"/>
+                                                    <action selector="popSaveTapped:" destination="hsN-Ur-p3A" eventType="touchUpInside" id="X0g-Ct-bId"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -181,9 +184,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="qPd-U9-tB7"/>
                     <connections>
-                        <outlet property="popImageView" destination="Rbi-hU-EDm" id="inh-PU-LKC"/>
-                        <outlet property="popNameTextField" destination="YwR-Kc-F8y" id="MIL-zn-fwV"/>
-                        <outlet property="popView" destination="Tl8-iu-fNp" id="0x2-Vy-20c"/>
+                        <outlet property="popImageView" destination="Rbi-hU-EDm" id="MzE-nz-UHa"/>
+                        <outlet property="popNameTextField" destination="YwR-Kc-F8y" id="ybK-tw-zpT"/>
+                        <outlet property="popView" destination="Tl8-iu-fNp" id="sXZ-sm-ZF8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdU-AY-EeU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
