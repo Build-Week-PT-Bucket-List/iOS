@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		95357EAA23595B5400A0B239 /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95357EA923595B5400A0B239 /* AddImageViewController.swift */; };
-		95357EAC23595B6500A0B239 /* AddVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95357EAB23595B6500A0B239 /* AddVideoViewController.swift */; };
-		95357EAE23595B7E00A0B239 /* AddJournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95357EAD23595B7E00A0B239 /* AddJournalEntryViewController.swift */; };
 		95357EB023595BAD00A0B239 /* AddVoiceMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95357EAF23595BAC00A0B239 /* AddVoiceMemoViewController.swift */; };
 		A3EE621F2357FD0800510D23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE621E2357FD0800510D23 /* AppDelegate.swift */; };
 		A3EE62212357FD0800510D23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE62202357FD0800510D23 /* SceneDelegate.swift */; };
@@ -23,13 +21,13 @@
 		A3EE623A2358146C00510D23 /* PostLists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3EE62392358146C00510D23 /* PostLists.storyboard */; };
 		A3EE623C235814F900510D23 /* PostProperties.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3EE623B235814F900510D23 /* PostProperties.storyboard */; };
 		A3EE6241235960B200510D23 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE6240235960B200510D23 /* LogInViewController.swift */; };
-		A3EE6243235960C100510D23 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE6242235960C100510D23 /* SignUpViewController.swift */; };
-		A3EE62452359610D00510D23 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE62442359610D00510D23 /* User.swift */; };
-		A3EE62472359611500510D23 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE62462359611500510D23 /* Bearer.swift */; };
-		A3EE624B2359616A00510D23 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE624A2359616A00510D23 /* UserController.swift */; };
 		A3EE624D235D494500510D23 /* HomePageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE624C235D494500510D23 /* HomePageCollectionViewController.swift */; };
-		A3EE624F235D49B800510D23 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE624E235D49B800510D23 /* LandingPageViewController.swift */; };
-		A3EE6251235D626B00510D23 /* LandingNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE6250235D626B00510D23 /* LandingNavViewController.swift */; };
+		A3EE6252235E95A700510D23 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE624A2359616A00510D23 /* UserController.swift */; };
+		A3EE6253235E95B200510D23 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE62442359610D00510D23 /* User.swift */; };
+		A3EE6254235E95B400510D23 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE62462359611500510D23 /* Bearer.swift */; };
+		A3EE6255235E95C200510D23 /* LandingNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE6250235D626B00510D23 /* LandingNavViewController.swift */; };
+		A3EE6256235E95CB00510D23 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE624E235D49B800510D23 /* LandingPageViewController.swift */; };
+		A3EE6257235E95D400510D23 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE6242235960C100510D23 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -234,12 +232,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3EE6254235E95B400510D23 /* Bearer.swift in Sources */,
 				A3EE624D235D494500510D23 /* HomePageCollectionViewController.swift in Sources */,
 				A3EE6241235960B200510D23 /* LogInViewController.swift in Sources */,
+				A3EE6252235E95A700510D23 /* UserController.swift in Sources */,
 				A3EE62232357FD0800510D23 /* ViewController.swift in Sources */,
 				A3EE621F2357FD0800510D23 /* AppDelegate.swift in Sources */,
+				A3EE6255235E95C200510D23 /* LandingNavViewController.swift in Sources */,
+				A3EE6256235E95CB00510D23 /* LandingPageViewController.swift in Sources */,
+				A3EE6253235E95B200510D23 /* User.swift in Sources */,
 				95357EB023595BAD00A0B239 /* AddVoiceMemoViewController.swift in Sources */,
 				95357EAA23595B5400A0B239 /* AddImageViewController.swift in Sources */,
+				A3EE6257235E95D400510D23 /* SignUpViewController.swift in Sources */,
 				A3EE62212357FD0800510D23 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

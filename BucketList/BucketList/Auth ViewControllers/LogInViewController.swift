@@ -40,6 +40,7 @@ class LogInViewController: UIViewController {
                             DispatchQueue.main.async {
      
                                 self.dismiss(animated: true, completion: nil)
+//                                self.navigationController?.popToViewController(LandingPageViewController, animated: true)
        
                             }
                         }

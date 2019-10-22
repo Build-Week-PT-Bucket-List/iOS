@@ -41,8 +41,8 @@ class SignUpViewController: UIViewController {
                      DispatchQueue.main.async {
                          let alertController = UIAlertController(title: "Sign Up Successful", message: "Now please log in", preferredStyle: .alert)
                          let alertAction = UIAlertAction(title: "OK", style: .default, handler: { (_) in
-                            self.dismiss(animated: true, completion: nil)
-//                             self.performSegue(withIdentifier: "ShowLogInSegue", sender: nil)
+                             
+                             self.performSegue(withIdentifier: "showLogIn", sender: nil)
                          })
                          
                          alertController.addAction(alertAction)
