@@ -13,6 +13,13 @@
 		6C26F4D0235EB15D0082861B /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C26F4CF235EB15D0082861B /* PostCollectionViewCell.swift */; };
 		95357EAA23595B5400A0B239 /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95357EA923595B5400A0B239 /* AddImageViewController.swift */; };
 		95357EB023595BAD00A0B239 /* AddVoiceMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95357EAF23595BAC00A0B239 /* AddVoiceMemoViewController.swift */; };
+		95CDD6D1235FE092004AEB02 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE62442359610D00510D23 /* User.swift */; };
+		95CDD6D2235FE096004AEB02 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE62462359611500510D23 /* Bearer.swift */; };
+		95CDD6D3235FE099004AEB02 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE624A2359616A00510D23 /* UserController.swift */; };
+		95CDD6D4235FE09D004AEB02 /* LandingNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE6250235D626B00510D23 /* LandingNavViewController.swift */; };
+		95CDD6D5235FE09F004AEB02 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE624E235D49B800510D23 /* LandingPageViewController.swift */; };
+		95CDD6D6235FE0A6004AEB02 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE6242235960C100510D23 /* SignUpViewController.swift */; };
+		95CDD6D8235FE63A004AEB02 /* PostPropertiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CDD6D7235FE63A004AEB02 /* PostPropertiesTableViewController.swift */; };
 		A3EE621F2357FD0800510D23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE621E2357FD0800510D23 /* AppDelegate.swift */; };
 		A3EE62212357FD0800510D23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE62202357FD0800510D23 /* SceneDelegate.swift */; };
 		A3EE62232357FD0800510D23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE62222357FD0800510D23 /* ViewController.swift */; };
@@ -36,6 +43,7 @@
 		95357EAB23595B6500A0B239 /* AddVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVideoViewController.swift; sourceTree = "<group>"; };
 		95357EAD23595B7E00A0B239 /* AddJournalEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJournalEntryViewController.swift; sourceTree = "<group>"; };
 		95357EAF23595BAC00A0B239 /* AddVoiceMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVoiceMemoViewController.swift; sourceTree = "<group>"; };
+		95CDD6D7235FE63A004AEB02 /* PostPropertiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostPropertiesTableViewController.swift; sourceTree = "<group>"; };
 		A3EE621B2357FD0800510D23 /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3EE621E2357FD0800510D23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3EE62202357FD0800510D23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +110,7 @@
 				95357EAB23595B6500A0B239 /* AddVideoViewController.swift */,
 				95357EAD23595B7E00A0B239 /* AddJournalEntryViewController.swift */,
 				95357EAF23595BAC00A0B239 /* AddVoiceMemoViewController.swift */,
+				95CDD6D7235FE63A004AEB02 /* PostPropertiesTableViewController.swift */,
 			);
 			path = PostPropertyViewControllers;
 			sourceTree = "<group>";
@@ -254,11 +263,18 @@
 				6C26F4D0235EB15D0082861B /* PostCollectionViewCell.swift in Sources */,
 				6C26F4CC235E97F70082861B /* HomeCollectionViewController.swift in Sources */,
 				A3EE6241235960B200510D23 /* LogInViewController.swift in Sources */,
+				95CDD6D3235FE099004AEB02 /* UserController.swift in Sources */,
+				95CDD6D2235FE096004AEB02 /* Bearer.swift in Sources */,
 				A3EE62232357FD0800510D23 /* ViewController.swift in Sources */,
 				A3EE621F2357FD0800510D23 /* AppDelegate.swift in Sources */,
+				95CDD6D4235FE09D004AEB02 /* LandingNavViewController.swift in Sources */,
+				95CDD6D5235FE09F004AEB02 /* LandingPageViewController.swift in Sources */,
+				95CDD6D1235FE092004AEB02 /* User.swift in Sources */,
 				95357EB023595BAD00A0B239 /* AddVoiceMemoViewController.swift in Sources */,
 				6C26F4CE235E98BA0082861B /* CategoryAddPopViewController.swift in Sources */,
 				95357EAA23595B5400A0B239 /* AddImageViewController.swift in Sources */,
+				95CDD6D6235FE0A6004AEB02 /* SignUpViewController.swift in Sources */,
+				95CDD6D8235FE63A004AEB02 /* PostPropertiesTableViewController.swift in Sources */,
 				A3EE62212357FD0800510D23 /* SceneDelegate.swift in Sources */,
 				6C26F4C8235E96F30082861B /* Posts.swift in Sources */,
 			);
