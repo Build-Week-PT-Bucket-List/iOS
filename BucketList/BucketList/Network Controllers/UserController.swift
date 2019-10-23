@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
  enum HTTPMethod: String {
      case get = "GET"
@@ -24,6 +25,7 @@ import Foundation
  }
 
 class UserController {
+    
     var user: User?
     var bearer: Bearer?
     

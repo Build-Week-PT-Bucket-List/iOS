@@ -24,7 +24,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tKZ-I4-pvp">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tKZ-I4-pvp" customClass="PostCollectionViewCell" customModule="BucketList" customModuleProvider="target">
                                 <rect key="frame" x="57" y="0.0" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tmR-up-zSb">
@@ -55,6 +55,8 @@
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="300" height="300"/>
                                 <connections>
+                                    <outlet property="imageCategory" destination="gyR-vJ-rMm" id="gYz-n8-jXu"/>
+                                    <outlet property="titleCategoryLabel" destination="etb-Rz-3gX" id="t9S-E6-b0G"/>
                                     <segue destination="Rxa-oZ-VUG" kind="show" identifier="ShowItemPostList" id="m8E-JQ-PqI"/>
                                 </connections>
                             </collectionViewCell>
@@ -72,8 +74,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="categoryImage" destination="gyR-vJ-rMm" id="4lM-TR-Nol"/>
-                        <outlet property="categoryName" destination="etb-Rz-3gX" id="hzK-UB-iPu"/>
                         <segue destination="VDo-44-hMU" kind="presentation" id="4AE-GM-Cim"/>
                     </connections>
                 </collectionViewController>

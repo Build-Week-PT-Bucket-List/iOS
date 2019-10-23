@@ -12,14 +12,12 @@ private let reuseIdentifier = "Cell"
 
 class HomeCollectionViewController: UICollectionViewController {
     
-    //Outlets
-    @IBOutlet weak var categoryImage: UIImageView!
-    @IBOutlet weak var categoryName: UILabel!
+    //Properties
     
+    let userController = UserController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -90,5 +88,13 @@ class HomeCollectionViewController: UICollectionViewController {
     
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toLanding" {
+            guard let landingVC = segue.destination as?
+            LandingNavViewController else {return}
+            landingVC.userController = userController
+        }
+    }
 
 }
