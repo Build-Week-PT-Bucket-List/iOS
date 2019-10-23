@@ -74,7 +74,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="VDo-44-hMU" kind="presentation" id="4AE-GM-Cim"/>
+                        <segue destination="VDo-44-hMU" kind="presentation" identifier="toLanding" id="4AE-GM-Cim"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y5Q-WZ-0zK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
