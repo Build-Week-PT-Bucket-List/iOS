@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Post Properties Table View Controller-->
         <scene sceneID="Xxc-bQ-exn">
             <objects>
-                <tableViewController id="4F0-k8-jIt" sceneMemberID="viewController">
+                <tableViewController id="4F0-k8-jIt" customClass="PostPropertiesTableViewController" customModule="BucketList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WGG-2X-auI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="4565" y="1175"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Journal Entry View Controller-->
         <scene sceneID="a0q-t0-BBx">
             <objects>
-                <viewController id="glN-zg-vHq" sceneMemberID="viewController">
+                <viewController id="glN-zg-vHq" customClass="AddJournalEntryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tL1-yo-UHB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,10 +188,10 @@
             </objects>
             <point key="canvasLocation" x="4633" y="700"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Image View Controller-->
         <scene sceneID="ZpF-73-Ho0">
             <objects>
-                <viewController id="91H-HR-b9G" sceneMemberID="viewController">
+                <viewController id="91H-HR-b9G" customClass="AddImageViewController" customModule="BucketList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sxq-y8-dGc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -241,10 +241,10 @@
             </objects>
             <point key="canvasLocation" x="5526" y="810"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Video View Controller-->
         <scene sceneID="SCd-Uv-zvv">
             <objects>
-                <viewController id="Uip-bE-2Wo" sceneMemberID="viewController">
+                <viewController id="Uip-bE-2Wo" customClass="AddVideoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="atZ-rS-HEb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -276,10 +276,10 @@
             </objects>
             <point key="canvasLocation" x="5525" y="1513"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Voice Memo View Controller-->
         <scene sceneID="aqg-W0-05W">
             <objects>
-                <viewController id="D6b-YY-GpN" sceneMemberID="viewController">
+                <viewController id="D6b-YY-GpN" customClass="AddVoiceMemoViewController" customModule="BucketList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0xY-3S-pgp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
