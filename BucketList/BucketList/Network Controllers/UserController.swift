@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import JWTDecode 
+import JWTDecode
 
 enum HTTPMethod: String {
     case get = "GET"
@@ -90,11 +90,11 @@ class UserController {
             }
             NSLog("Successfully signed up User")
             
-//            completion(nil)
+            //            completion(nil)
         } .resume()
     }
     
-//    func logIn(with user: User, completion: @escaping (NetworkError?) -> ()) {
+    //    func logIn(with user: User, completion: @escaping (NetworkError?) -> ()) {
     
     func logIn(email: String, password: String, completion: @escaping (NetworkError?) -> Void) {
         //            guard let bearer = self.bearer else {
@@ -114,15 +114,15 @@ class UserController {
             NSLog("Error encoding JSON")
         }
         
-//        let jsonEncoder = JSONEncoder()
-//        do {
-//            let jsonData = try jsonEncoder.encode(user)
-//            request.httpBody = jsonData
-//        } catch {
-//            NSLog("Error encoding user object: \(error)")
-//            completion(.noAuth)
-//        }
-//
+        //        let jsonEncoder = JSONEncoder()
+        //        do {
+        //            let jsonData = try jsonEncoder.encode(user)
+        //            request.httpBody = jsonData
+        //        } catch {
+        //            NSLog("Error encoding user object: \(error)")
+        //            completion(.noAuth)
+        //        }
+        //
         URLSession.shared.dataTask(with: request) {(data, response, error) in
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 200 {
@@ -140,15 +140,15 @@ class UserController {
             }
             let decoder = JSONDecoder()
             
-//            do {
-//                self.bearer = try decoder.decode(Bearer.self, from: data)
-//
-//            } catch {
-//                NSLog("error decoding bearer object: \(error)")
-//                completion(.noDecode)
-//                return
-//
-//            }
+            //            do {
+            //                self.bearer = try decoder.decode(Bearer.self, from: data)
+            //
+            //            } catch {
+            //                NSLog("error decoding bearer object: \(error)")
+            //                completion(.noDecode)
+            //                return
+            //
+            //            }
             
             do {
                 let jwtToken = try decoder.decode(JWT.self, from: data)
@@ -161,19 +161,72 @@ class UserController {
             }
             NSLog("successfully logged in user")
             completion(nil)
-        
+            
         } .resume()
         
     }
     
-    
-//    func saveUser(id: Int, token: String, created: "string" ) {
-//        guard let bearer = bearer else {return }
-//        UserDefaults.standard.set("\(bearer.token)", forKey: "Bearer")
-//        UserDefaults.standard.set(id, forKey: UserDefaultsKeys.id.rawValue)
-//        UserDefaults.standard.set(true, forKey: UserDefaultsKeys.isLoggedIn.rawValue)
-//        UserDefaults.standard.set(created, forKey: UserDefaultsKeys.created.rawValue)
-//    }  // ask about this
+    func getUser(user: User?, completion: @escaping (User?, NetworkError?) -> Void) {
+        let userURL = baseUrl.appendingPathComponent("user")
+        
+        
+        var request = URLRequest(url: userURL)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = HTTPMethod.get.rawValue
+        
+        
+        guard let bearer = self.bearer else {
+            completion(.noAuth)
+            return
+        }
+//        guard let token = UserDefaults.standard.token else {
+//            NSLog("No JWT Token Set to User Defaults")
+//            return
+//        }
+        
+        request.setValue("\(bearer.token)", forHTTPHeaderField: "Authorization")
+        
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                NSLog("Error getting user: \(error)")
+                return
+            }
+            
+            guard let data = data else {
+                NSLog("Error retrieving data from server")
+                return
+            }
+            
+            if let response = response as? HTTPURLResponse,
+                          response.statusCode != 200 {
+                          
+                          completion(.badAuth)
+                          return
+                      }
+            
+            
+            do {
+                let user = try JSONDecoder().decode(User.self, from: data)
+                completion(user, nil)
+            } catch {
+                NSLog("Error with network request: \(error)")
+                return
+            }
+            
+            NSLog("Successfully fetched User")
+            
+            
+        }.resume()
+        
+    }
+    //    func saveUser(id: Int, token: String, created: "string" ) {
+    //        guard let bearer = bearer else {return }
+    //        UserDefaults.standard.set("\(bearer.token)", forKey: "Bearer")
+    //        UserDefaults.standard.set(id, forKey: UserDefaultsKeys.id.rawValue)
+    //        UserDefaults.standard.set(true, forKey: UserDefaultsKeys.isLoggedIn.rawValue)
+    //        UserDefaults.standard.set(created, forKey: UserDefaultsKeys.created.rawValue)
+    //    }  // ask about this
 }
 
 

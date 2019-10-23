@@ -31,9 +31,11 @@ class LogInViewController: UIViewController {
                 if let email = self.emailTextField.text,
                     !email.isEmpty,
                     let password = self.passwordTextField.text, !password.isEmpty {
-                    let user = User(id: nil, name: nil, email: email, password: password, created: nil)
+//                    let user = User(id: nil, name: nil, email: email, password: password, created: nil)
                     
-                    userController.logIn(with: user) { (error) in
+//                    userController.logIn(with: user) { (error) in
+                    userController.logIn(email: email, password: password) { (error) in
+                        
                         if let error = error {
                             NSLog("Error occured during log in: \(error)")
                         } else {
