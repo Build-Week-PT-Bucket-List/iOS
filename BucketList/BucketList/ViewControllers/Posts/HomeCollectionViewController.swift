@@ -1,8 +1,8 @@
 //
-//  HomePageCollectionViewController.swift
+//  HomeCollectionViewController.swift
 //  BucketList
 //
-//  Created by Stephanie Bowles on 10/21/19.
+//  Created by Lambda_School_Loaner_188 on 10/22/19.
 //  Copyright © 2019 Stephanie Bowles. All rights reserved.
 //
 
@@ -10,12 +10,14 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class HomePageCollectionViewController: UICollectionViewController {
-
+class HomeCollectionViewController: UICollectionViewController {
+    
+    //Properties
+    
     let userController = UserController()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,10 +25,6 @@ class HomePageCollectionViewController: UICollectionViewController {
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        performSegue(withIdentifier: "toLanding", sender: nil)
     }
 
     /*
