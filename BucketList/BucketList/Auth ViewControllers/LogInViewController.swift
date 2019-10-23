@@ -39,7 +39,8 @@ class LogInViewController: UIViewController {
                         } else {
                             DispatchQueue.main.async {
      
-                                self.dismiss(animated: true, completion: nil)
+                            self.dismiss(animated: true, completion: nil)
+//                                self.navigationController?.popToViewController(ofClass: HomeCollectionViewController.self)
 //                                self.navigationController?.popToViewController(LandingPageViewController, animated: true)
        
                             }
@@ -58,4 +59,11 @@ class LogInViewController: UIViewController {
     }
     */
 
+}
+extension UINavigationController {
+  func popToViewController(ofClass: AnyClass, animated: Bool = true) {
+    if let vc = viewControllers.last(where: { $0.isKind(of: ofClass) }) {
+      popToViewController(vc, animated: animated)
+    }
+  }
 }

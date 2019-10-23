@@ -39,7 +39,7 @@ class UserController {
         var request = URLRequest(url: signUpURL)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("USER_TOKEN", forHTTPHeaderField: "Authorization")
+//        request.addValue("USER_TOKEN", forHTTPHeaderField: "Authorization")
         
         let jsonEnconder = JSONEncoder()
                do {
@@ -50,7 +50,7 @@ class UserController {
                    completion(error)
                    return
                }
-               URLSession.shared.dataTask(with: request) { _, response, error in
+               URLSession.shared.dataTask(with: request) { data, response, error in
                    if let response = response as? HTTPURLResponse,
                        response.statusCode != 200 {
                      
@@ -61,17 +61,37 @@ class UserController {
                        completion(error)
                        return
                    }
+                    guard let data = data else {
+                                    completion(error)
+                                    return
+                                }
+                                let decoder = JSONDecoder()
+                                
+                                do {
+                                    self.bearer = try decoder.decode(Bearer.self, from: data)
+                                    
+                                    
+                                } catch {
+                                    NSLog("error decoding bearer object: \(error)")
+                                    completion(error)
+                                    return
+                                    
+                                }
                    completion(nil)
                    } .resume()
     }
     
     func logIn(with user: User, completion: @escaping (NetworkError?) -> ()) {
+//            guard let bearer = self.bearer else {
+//                completion(.noAuth)
+//                              return
+//                          }
             let logInURL = baseURL.appendingPathComponent("login")
             var request = URLRequest(url: logInURL)
             request.httpMethod = HTTPMethod.post.rawValue
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.addValue("USER_TOKEN", forHTTPHeaderField: "Authorization")
-            
+//            request.addValue("\(bearer.token)", forHTTPHeaderField: "Authorization")
+           
             let jsonEncoder = JSONEncoder()
             do {
                 let jsonData = try jsonEncoder.encode(user)
