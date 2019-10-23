@@ -32,6 +32,12 @@
 		A3EE623A2358146C00510D23 /* PostLists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3EE62392358146C00510D23 /* PostLists.storyboard */; };
 		A3EE623C235814F900510D23 /* PostProperties.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3EE623B235814F900510D23 /* PostProperties.storyboard */; };
 		A3EE6241235960B200510D23 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE6240235960B200510D23 /* LogInViewController.swift */; };
+		A3EE6258235FEA1400510D23 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE624A2359616A00510D23 /* UserController.swift */; };
+		A3EE6259235FEA1700510D23 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE62442359610D00510D23 /* User.swift */; };
+		A3EE625A235FEA1900510D23 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE62462359611500510D23 /* Bearer.swift */; };
+		A3EE625B235FEA2300510D23 /* LandingNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE6250235D626B00510D23 /* LandingNavViewController.swift */; };
+		A3EE625C235FEA3200510D23 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE624E235D49B800510D23 /* LandingPageViewController.swift */; };
+		A3EE625D235FEA3E00510D23 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE6242235960C100510D23 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -262,6 +268,7 @@
 			files = (
 				6C26F4D0235EB15D0082861B /* PostCollectionViewCell.swift in Sources */,
 				6C26F4CC235E97F70082861B /* HomeCollectionViewController.swift in Sources */,
+				A3EE625B235FEA2300510D23 /* LandingNavViewController.swift in Sources */,
 				A3EE6241235960B200510D23 /* LogInViewController.swift in Sources */,
 				95CDD6D3235FE099004AEB02 /* UserController.swift in Sources */,
 				95CDD6D2235FE096004AEB02 /* Bearer.swift in Sources */,
@@ -272,6 +279,9 @@
 				95CDD6D1235FE092004AEB02 /* User.swift in Sources */,
 				95357EB023595BAD00A0B239 /* AddVoiceMemoViewController.swift in Sources */,
 				6C26F4CE235E98BA0082861B /* CategoryAddPopViewController.swift in Sources */,
+				A3EE625D235FEA3E00510D23 /* SignUpViewController.swift in Sources */,
+				A3EE625C235FEA3200510D23 /* LandingPageViewController.swift in Sources */,
+				A3EE6259235FEA1700510D23 /* User.swift in Sources */,
 				95357EAA23595B5400A0B239 /* AddImageViewController.swift in Sources */,
 				95CDD6D6235FE0A6004AEB02 /* SignUpViewController.swift in Sources */,
 				95CDD6D8235FE63A004AEB02 /* PostPropertiesTableViewController.swift in Sources */,
