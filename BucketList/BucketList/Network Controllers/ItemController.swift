@@ -12,8 +12,7 @@ import UIKit
 class ItemController {
     var item: Item?
     var items: [Item] = []
-//    static var quantity = 0
-    var bearer: Bearer!
+    var bearer: Bearer?
     // bearer is coming from userController - how can I pass the bearer from the userController to the itemController
     var userController: UserController?
     
@@ -23,14 +22,16 @@ class ItemController {
         
     }
     
-    func create(id: Int, description: String?, completed: Bool?) {
-        let item = Item(user_id: id, description: description, completed: completed)
-        put(item: item)
+    func create(user_id: Int, description: String?, completed: Bool?) {
+        let item = Item(user_id: user_id, description: description, completed: completed)
+        items.append(item)
+        postItem(item: item)
     }
     
-    func put(item: Item, completion: @escaping (Error?) -> Void = { _ in }) { // PUT
+    func postItem(item: Item, completion: @escaping (Error?) -> Void = { _ in }) { // PUT
         let createURL = baseURL.appendingPathComponent("item")
-        self.bearer = userController?.bearer
+        guard let bearer = userController?.bearer else { return }
+        self.bearer = bearer
         
         var request = URLRequest(url: createURL)
         request.httpMethod = HTTPMethod.post.rawValue
