@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C64304D985BA4D12890172A /* Pods_BucketList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C86AE1799ECCF7A2F8C9AB /* Pods_BucketList.framework */; };
 		6C26F4C8235E96F30082861B /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C26F4C7235E96F30082861B /* Posts.swift */; };
 		6C26F4CC235E97F70082861B /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C26F4CB235E97F70082861B /* HomeCollectionViewController.swift */; };
 		6C26F4CE235E98BA0082861B /* CategoryAddPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C26F4CD235E98BA0082861B /* CategoryAddPopViewController.swift */; };
@@ -32,15 +33,15 @@
 		A3EE623A2358146C00510D23 /* PostLists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3EE62392358146C00510D23 /* PostLists.storyboard */; };
 		A3EE623C235814F900510D23 /* PostProperties.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3EE623B235814F900510D23 /* PostProperties.storyboard */; };
 		A3EE6241235960B200510D23 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE6240235960B200510D23 /* LogInViewController.swift */; };
-		A3EE6258235FEA1400510D23 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE624A2359616A00510D23 /* UserController.swift */; };
 		A3EE6259235FEA1700510D23 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE62442359610D00510D23 /* User.swift */; };
-		A3EE625A235FEA1900510D23 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE62462359611500510D23 /* Bearer.swift */; };
 		A3EE625B235FEA2300510D23 /* LandingNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE6250235D626B00510D23 /* LandingNavViewController.swift */; };
 		A3EE625C235FEA3200510D23 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE624E235D49B800510D23 /* LandingPageViewController.swift */; };
 		A3EE625D235FEA3E00510D23 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EE6242235960C100510D23 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13C86AE1799ECCF7A2F8C9AB /* Pods_BucketList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BucketList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60510B7ECFB3842C1D78724E /* Pods-BucketList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BucketList.release.xcconfig"; path = "Target Support Files/Pods-BucketList/Pods-BucketList.release.xcconfig"; sourceTree = "<group>"; };
 		6C26F4C7235E96F30082861B /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		6C26F4CB235E97F70082861B /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		6C26F4CD235E98BA0082861B /* CategoryAddPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAddPopViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 		A3EE624A2359616A00510D23 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		A3EE624E235D49B800510D23 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		A3EE6250235D626B00510D23 /* LandingNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingNavViewController.swift; sourceTree = "<group>"; };
+		E865C38401AB6E0AC54B9252 /* Pods-BucketList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BucketList.debug.xcconfig"; path = "Target Support Files/Pods-BucketList/Pods-BucketList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C64304D985BA4D12890172A /* Pods_BucketList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +129,8 @@
 			children = (
 				A3EE621D2357FD0800510D23 /* BucketList */,
 				A3EE621C2357FD0800510D23 /* Products */,
+				FC57AC328E51C989FF63B15F /* Pods */,
+				B9AA775B44DFD4592C744FF3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,6 +195,24 @@
 			path = "Auth ViewControllers";
 			sourceTree = "<group>";
 		};
+		B9AA775B44DFD4592C744FF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13C86AE1799ECCF7A2F8C9AB /* Pods_BucketList.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC57AC328E51C989FF63B15F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E865C38401AB6E0AC54B9252 /* Pods-BucketList.debug.xcconfig */,
+				60510B7ECFB3842C1D78724E /* Pods-BucketList.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -197,9 +220,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3EE622F2357FD0A00510D23 /* Build configuration list for PBXNativeTarget "BucketList" */;
 			buildPhases = (
+				E84CE240EBEBC81F560EA348 /* [CP] Check Pods Manifest.lock */,
 				A3EE62172357FD0800510D23 /* Sources */,
 				A3EE62182357FD0800510D23 /* Frameworks */,
 				A3EE62192357FD0800510D23 /* Resources */,
+				9C36BAC2C4FB75DAB2391CB3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -260,6 +285,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9C36BAC2C4FB75DAB2391CB3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BucketList/Pods-BucketList-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BucketList/Pods-BucketList-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BucketList/Pods-BucketList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E84CE240EBEBC81F560EA348 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BucketList-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A3EE62172357FD0800510D23 /* Sources */ = {
@@ -436,6 +503,7 @@
 		};
 		A3EE62302357FD0A00510D23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E865C38401AB6E0AC54B9252 /* Pods-BucketList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +522,7 @@
 		};
 		A3EE62312357FD0A00510D23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60510B7ECFB3842C1D78724E /* Pods-BucketList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
