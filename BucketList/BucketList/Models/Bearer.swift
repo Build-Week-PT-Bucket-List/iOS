@@ -10,5 +10,5 @@ import Foundation
 
 struct Bearer: Codable {
     var token: String
-    //var email: String
+    var message: String
 }
