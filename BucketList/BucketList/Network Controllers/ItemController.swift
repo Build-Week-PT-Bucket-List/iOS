@@ -10,8 +10,12 @@ import Foundation
 import UIKit
 
 class ItemController {
-//    var item: Item?
+    var item: Item?
+    var items: [Item] = []
 //    static var quantity = 0
+    var bearer: Bearer!
+    // bearer is coming from userController - how can I pass the bearer from the userController to the itemController
+    var userController: UserController?
     
     private let baseURL = URL(string: "https://bw-pt-bucket-list.herokuapp.com/api")!
     
@@ -26,11 +30,12 @@ class ItemController {
     
     func put(item: Item, completion: @escaping (Error?) -> Void = { _ in }) { // PUT
         let createURL = baseURL.appendingPathComponent("item")
+        self.bearer = userController?.bearer
         
         var request = URLRequest(url: createURL)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("USER_TOKEN", forHTTPHeaderField: "Authorization")
+        request.addValue("\(bearer.token)", forHTTPHeaderField: "Authorization")
         
         do {
             let jsonData = try JSONEncoder().encode(item)
