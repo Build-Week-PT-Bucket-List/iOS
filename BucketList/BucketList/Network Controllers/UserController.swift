@@ -34,9 +34,9 @@ class UserController {
     
     private let baseURL = URL(string: "https://bw-pt-bucket-list.herokuapp.com/api")!
     
-    //    func signUp(with user: User, completion: @escaping (Error?) -> ()) {
+    
     func signUp(name: String, email: String, password: String, completion: @escaping (Error?) -> Void = {_ in}) {
-        let signUpURL = baseURL.appendingPathComponent("/register")
+        let signUpURL = baseURL.appendingPathComponent("register")
         
         var request = URLRequest(url: signUpURL)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -44,7 +44,6 @@ class UserController {
         //        request.addValue("USER_TOKEN", forHTTPHeaderField: "Authorization")
         
         let userParams = ["name": name, "email": email, "password": password] as [String: Any]
-        
         do {
             let json = try JSONSerialization.data(withJSONObject: userParams, options: .prettyPrinted)
             request.httpBody = json
@@ -52,16 +51,7 @@ class UserController {
             NSLog("Error encoding JSON")
             return
         }
-        //        let jsonEnconder = JSONEncoder()
-        //               do {
-        //                   let jsonData = try jsonEnconder.encode(user)
-        //                   request.httpBody = jsonData
-        //               } catch {
-        //                   print("Error encoding user object: \(error)")
-        //                   completion(error)
-        //                   return
-        //               }
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        URLSession.shared.dataTask(with: request) { _, response, error in
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 200 {
                 
@@ -72,40 +62,24 @@ class UserController {
                 completion(error)
                 return
             }
-            guard let data = data else {
-                completion(error)
-                return
-            }
-            let decoder = JSONDecoder()
-            
-            do {
-                self.bearer = try decoder.decode(Bearer.self, from: data)
-                
-                
-            } catch {
-                NSLog("error decoding bearer object: \(error)")
-                completion(error)
-                return
-                
-            }
+//            guard let data = data else {
+//                completion(error)
+//                return
+//            }
             NSLog("Successfully signed up User")
-            
-            //            completion(nil)
+            self.logIn(email: email, password: password, completion: completion)
+ 
+            completion(nil)
         } .resume()
     }
     
-    //    func logIn(with user: User, completion: @escaping (NetworkError?) -> ()) {
-    
     func logIn(email: String, password: String, completion: @escaping (NetworkError?) -> Void) {
-        //            guard let bearer = self.bearer else {
-        //                completion(.noAuth)
-        //                              return
-        //                          }
+
         let logInURL = baseURL.appendingPathComponent("login")
         var request = URLRequest(url: logInURL)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        //            request.addValue("\(bearer.token)", forHTTPHeaderField: "Authorization")
+       
         let userParams = ["email": email, "password": password] as [String: Any]
         do {
             let json = try JSONSerialization.data(withJSONObject: userParams, options: .prettyPrinted)
@@ -113,20 +87,11 @@ class UserController {
         } catch {
             NSLog("Error encoding JSON")
         }
-        
-        //        let jsonEncoder = JSONEncoder()
-        //        do {
-        //            let jsonData = try jsonEncoder.encode(user)
-        //            request.httpBody = jsonData
-        //        } catch {
-        //            NSLog("Error encoding user object: \(error)")
-        //            completion(.noAuth)
-        //        }
-        //
+
         URLSession.shared.dataTask(with: request) {(data, response, error) in
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 200 {
-                
+
                 completion(.badAuth)
                 return
             }
@@ -138,23 +103,13 @@ class UserController {
                 completion(.badData)
                 return
             }
-            let decoder = JSONDecoder()
-            
-            //            do {
-            //                self.bearer = try decoder.decode(Bearer.self, from: data)
-            //
-            //            } catch {
-            //                NSLog("error decoding bearer object: \(error)")
-            //                completion(.noDecode)
-            //                return
-            //
-            //            }
-            
             do {
-                let jwtToken = try decoder.decode(JWT.self, from: data)
-                let jwt = try decode(jwt: jwtToken.jwt)
-                let id = jwt.body["id"] as! Int
-                self.bearer = jwt.string
+
+                let bearer = try JSONDecoder().decode(Bearer.self, from: data)
+//                let jwt = try decode(jwt: bearer.token)
+                 let _ = try decode(jwt: bearer.token)
+//                let id = jwt.body["id"] as! Int
+                self.bearer = bearer
             } catch {
                 NSLog("Error decoding JSON Web token" )
                 return
@@ -166,8 +121,8 @@ class UserController {
         
     }
     
-    func getUser(user: User?, completion: @escaping (User?, NetworkError?) -> Void) {
-        let userURL = baseUrl.appendingPathComponent("user")
+    func getUser(user: User?, completion: @escaping ( NetworkError?) -> Void) {
+        let userURL = baseURL.appendingPathComponent("user")
         
         
         var request = URLRequest(url: userURL)
@@ -208,7 +163,8 @@ class UserController {
             
             do {
                 let user = try JSONDecoder().decode(User.self, from: data)
-                completion(user, nil)
+                self.user = user
+                completion( nil)
             } catch {
                 NSLog("Error with network request: \(error)")
                 return
