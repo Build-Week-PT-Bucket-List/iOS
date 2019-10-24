@@ -10,20 +10,28 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class HomeCollectionViewController: UICollectionViewController {
+class HomeCollectionViewController: UICollectionViewController{
+    
+    //temp array
+    let listOfItems = ["travel","sport"]
+    let catImages: [UIImage] = [
+    UIImage(named: "sport")!,
+    UIImage(named: "travel")!
+    ]
+    
+    
     
     //Properties
-    
     let userController = UserController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
+        //temp
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -44,22 +52,32 @@ class HomeCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return listOfItems.count
     }
 
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
-    }
+//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of items
+//        //temp
+//        return listOfItems.count
+//    }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PostCollectionViewCell
+        
+        cell.titleCategoryLabel.text = listOfItems[indexPath.item]
+        cell.imageCategory.image = catImages[indexPath.item]
+        
+        
     
         // Configure the cell
     
         return cell
     }
+    
+    
+    
+
 
     // MARK: UICollectionViewDelegate
 
