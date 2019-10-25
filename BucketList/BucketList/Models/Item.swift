@@ -8,7 +8,12 @@
 
 import Foundation
 
+struct ItemId: Codable {
+    var id: Int
+}
+
 struct Item: Codable {
+    var id: ItemId?
     var user_id: Int
     var description: String?
     var completed: Bool?
