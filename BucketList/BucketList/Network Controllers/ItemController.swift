@@ -26,6 +26,8 @@ class ItemController {
         let item = Item(user_id: user_id, description: description, completed: completed)
         items.append(item)
         postItem(item: item)
+        NSLog("Created item with description \(item.description!)")
+
     }
     
     func postItem(item: Item, completion: @escaping (Error?) -> Void = { _ in }) { // PUT
@@ -53,7 +55,8 @@ class ItemController {
                 completion(error)
                 return
              }
-             completion(nil)
+            completion(nil)
+            
         } .resume()
     }
     
