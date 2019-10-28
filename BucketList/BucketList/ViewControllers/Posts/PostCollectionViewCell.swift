@@ -14,5 +14,5 @@ class PostCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageCategory: UIImageView!
     @IBOutlet weak var titleCategoryLabel: UILabel!
     
-    
+    var item: Item? 
 }

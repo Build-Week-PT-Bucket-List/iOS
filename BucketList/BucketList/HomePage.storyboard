@@ -24,33 +24,33 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="tKZ-I4-pvp" customClass="PostCollectionViewCell" customModule="BucketList" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="tKZ-I4-pvp" customClass="PostCollectionViewCell" customModule="BucketList" customModuleProvider="target">
                                 <rect key="frame" x="57" y="0.0" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tmR-up-zSb">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gyR-vJ-rMm">
-                                            <rect key="frame" x="20" y="20" width="260" height="260"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etb-Rz-3gX">
                                             <rect key="frame" x="20" y="249" width="260" height="21"/>
                                             <color key="backgroundColor" red="0.27058823529411763" green="0.25882352941176467" blue="0.27058823529411763" alpha="0.37762200342465752" colorSpace="calibratedRGB"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gyR-vJ-rMm">
+                                            <rect key="frame" x="20" y="20" width="260" height="260"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="etb-Rz-3gX" secondAttribute="bottom" constant="30" id="0O8-Pz-oRY"/>
-                                        <constraint firstAttribute="trailing" secondItem="gyR-vJ-rMm" secondAttribute="trailing" constant="20" symbolic="YES" id="2XA-c1-rQP"/>
-                                        <constraint firstItem="gyR-vJ-rMm" firstAttribute="top" secondItem="tmR-up-zSb" secondAttribute="top" constant="20" symbolic="YES" id="B0S-ND-8SD"/>
+                                        <constraint firstItem="gyR-vJ-rMm" firstAttribute="centerY" secondItem="tmR-up-zSb" secondAttribute="centerY" id="8Zt-hV-7Zd"/>
                                         <constraint firstAttribute="trailing" secondItem="etb-Rz-3gX" secondAttribute="trailing" constant="20" symbolic="YES" id="EJC-ca-tnR"/>
-                                        <constraint firstAttribute="bottom" secondItem="gyR-vJ-rMm" secondAttribute="bottom" constant="20" symbolic="YES" id="Kxs-aD-7hX"/>
+                                        <constraint firstItem="gyR-vJ-rMm" firstAttribute="trailing" secondItem="etb-Rz-3gX" secondAttribute="trailing" id="GgP-oN-Vla"/>
                                         <constraint firstItem="etb-Rz-3gX" firstAttribute="leading" secondItem="tmR-up-zSb" secondAttribute="leading" constant="20" symbolic="YES" id="Ltr-KO-o9c"/>
-                                        <constraint firstItem="gyR-vJ-rMm" firstAttribute="leading" secondItem="tmR-up-zSb" secondAttribute="leading" constant="20" symbolic="YES" id="hTg-WG-uIX"/>
+                                        <constraint firstItem="gyR-vJ-rMm" firstAttribute="leading" secondItem="etb-Rz-3gX" secondAttribute="leading" id="Tcm-qI-jb2"/>
+                                        <constraint firstItem="gyR-vJ-rMm" firstAttribute="top" secondItem="tmR-up-zSb" secondAttribute="top" constant="20" id="cA3-f3-r6X"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="300" height="300"/>
@@ -69,7 +69,7 @@
                     <navigationItem key="navigationItem" id="nEK-AJ-uoD">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sog-vj-eIS">
                             <connections>
-                                <segue destination="hsN-Ur-p3A" kind="presentation" id="gXX-ca-mqu"/>
+                                <segue destination="hsN-Ur-p3A" kind="presentation" identifier="PopToAddItem" id="gXX-ca-mqu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

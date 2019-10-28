@@ -16,35 +16,29 @@ class CategoryAddPopViewController: UIViewController {
     @IBOutlet weak var popNameTextField: UITextField!
     @IBOutlet weak var popView: UIView!
     
+    var userController: UserController?
+    var itemController: ItemController?
+    var item: Item?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         popView.layer.cornerRadius = 10
         popView.layer.masksToBounds = true
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
     // MARK: - Navigation
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    
+
     // Image add to pop
     @IBAction func addImageButton(_ sender: Any) {
     }
     
-    // Pop Save
-    // temp added to dismiss
     @IBAction func popSaveTapped(_ sender: Any) {
+        if let itemTitle = popNameTextField.text, !itemTitle.isEmpty {
+            itemController?.create(user_id: 33, description: itemTitle, completed: false)
+        }
+        for item in itemController!.items {
+            NSLog("Array: \(String(describing: item.description))\n")
+        }
         dismiss(animated: true, completion: nil)
     }
-    
-
 }

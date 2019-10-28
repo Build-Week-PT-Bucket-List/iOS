@@ -15,8 +15,6 @@ class ItemController {
     var item: Item?
     var items: [Item] = []
     var bearer: Bearer?
-//    var itemId: ItemId?
-    // bearer is coming from userController - how can I pass the bearer from the userController to the itemController
     var userController: UserController?
     
     private let baseURL = URL(string: "https://bw-pt-bucket-list.herokuapp.com/api")!
@@ -35,7 +33,6 @@ class ItemController {
             }
         }
 //        NSLog("Item id is: \(item.id!)")
-
         NSLog("Created item with description \(item.description!)")
     }
     
@@ -108,7 +105,7 @@ class ItemController {
           
         var request = URLRequest(url: getURL)
         request.httpMethod = HTTPMethod.get.rawValue
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("\(bearer.token)", forHTTPHeaderField: "Authorization")
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let response = response as? HTTPURLResponse,
@@ -138,23 +135,6 @@ class ItemController {
                 return
             }
         } .resume()
-        
-//        let fetchItemURL = baseURL.appendingPathComponent("item/\(id)")
-
-//        GET /api/item/:item_id
-//        -header:
-//            -Authorization : USER_TOKEN -Required
-//        -returns bucket list item by id
-//            *example:
-//                {
-//                  "item": {
-//                    "id": 1,
-//                    "user_id": 1,
-//                    "completed": false,
-//                    "description": "Drive a Ferrari",
-//                    "created": "2019-06-28T15:52:58.870Z"
-//                  }
-//                }
     }
     
     func update() { // POST
