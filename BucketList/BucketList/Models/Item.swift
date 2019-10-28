@@ -8,12 +8,17 @@
 
 import Foundation
 
+struct ItemId: Codable {
+    var id: Int
+}
+
 struct Item: Codable {
+    var id: ItemId?
     var user_id: Int
     var description: String?
     var completed: Bool?
-//    var posts: [Post]
-    
+    var created: String?
+
     
     init(user_id: Int, description: String?, completed: Bool? = false) {
         self.user_id = user_id
