@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct ItemId: Codable {
+struct ItemId: Codable, Equatable {
     var id: Int
 }
 
-struct Item: Codable {
+struct Item: Codable, Equatable {
     var id: ItemId?
     var user_id: Int
     var description: String?

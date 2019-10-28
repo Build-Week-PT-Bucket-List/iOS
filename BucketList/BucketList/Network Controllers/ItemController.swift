@@ -88,49 +88,6 @@ class ItemController {
             completion(nil)
             
         } .resume()
-//    func logIn(email: String, password: String, completion: @escaping (NetworkError?) -> Void) {
-//
-//        let logInURL = baseURL.appendingPathComponent("login")
-//        var request = URLRequest(url: logInURL)
-//        request.httpMethod = HTTPMethod.post.rawValue
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//
-//        let userParams = ["email": email, "password": password] as [String: Any]
-//        do {
-//            let json = try JSONSerialization.data(withJSONObject: userParams, options: .prettyPrinted)
-//            request.httpBody = json
-//        } catch {
-//            NSLog("Error encoding JSON")
-//        }
-//
-//        URLSession.shared.dataTask(with: request) {(data, response, error) in
-//            if let response = response as? HTTPURLResponse,
-//                response.statusCode != 200 {
-//
-//                completion(.badAuth)
-//                return
-//            }
-//            if let _ = error {
-//                completion(.otherError)
-//                return
-//            }
-//            guard let data = data else {
-//                completion(.badData)
-//                return
-//            }
-//            do {
-//
-//                let bearer = try JSONDecoder().decode(Bearer.self, from: data)
-//                 let _ = try decode(jwt: bearer.token)
-//                self.bearer = bearer
-//            } catch {
-//                NSLog("Error decoding JSON Web token" )
-//                return
-//            }
-//            NSLog("successfully logged in user")
-//            completion(nil)
-//        } .resume()
-//    }
     }
     
     func fetchSingleItem(item: Item, completion: @escaping (NetworkError?) -> Void) { // GET
@@ -141,7 +98,46 @@ class ItemController {
         }
         self.bearer = bearer
         
+        guard let id = item.id else {
+        print("Trip Id failed")
+        completion(.otherError)
+        return}
+      
+        let getURL = baseURL.appendingPathComponent("item/:\(id)")
         
+          
+        var request = URLRequest(url: getURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
+                completion(.badAuth)
+                return
+            }
+            if let error = error {
+                NSLog("Error getting item \(error)")
+                completion(.otherError)
+                return
+            }
+            guard let data = data else {
+                NSLog("No data returned" )
+                completion(.badData)
+                return
+            }
+            
+            do {
+                let decodedItem = try JSONDecoder().decode(Item.self, from: data)
+                guard let itemIndex = self.items.firstIndex(of: item) else {throw NetworkError.otherError}
+                self.items[itemIndex] = decodedItem
+                completion(nil)
+            } catch {
+                NSLog("Error decoding item: \(error)")
+                completion(.noDecode)
+                return
+            }
+        } .resume()
         
 //        let fetchItemURL = baseURL.appendingPathComponent("item/\(id)")
 
