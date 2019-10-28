@@ -8,11 +8,14 @@
 
 import Foundation
 import UIKit
+import JWTDecode
+
 
 class ItemController {
     var item: Item?
     var items: [Item] = []
     var bearer: Bearer?
+//    var itemId: ItemId?
     // bearer is coming from userController - how can I pass the bearer from the userController to the itemController
     var userController: UserController?
     
@@ -25,12 +28,18 @@ class ItemController {
     func create(user_id: Int, description: String?, completed: Bool?) {
         let item = Item(user_id: user_id, description: description, completed: completed)
         items.append(item)
-        postItem(item: item)
-        NSLog("Created item with description \(item.description!)")
+        postItem(item: item) { (error) in
+            if let error = error {
+                NSLog("Error occured during POST: \(error)")
+                return
+            }
+        }
+//        NSLog("Item id is: \(item.id!)")
 
+        NSLog("Created item with description \(item.description!)")
     }
     
-    func postItem(item: Item, completion: @escaping (Error?) -> Void = { _ in }) { // PUT
+    func postItem(item: Item, completion: @escaping (NetworkError?) -> Void) { // PUT
         let createURL = baseURL.appendingPathComponent("item")
         guard let bearer = userController?.bearer else { return }
         self.bearer = bearer
@@ -45,23 +54,111 @@ class ItemController {
             request.httpBody = jsonData
          } catch {
             NSLog("Error encoding item object to api: \(error)")
-            completion(error)
+            completion(.otherError)
             return
          }
          
-        URLSession.shared.dataTask(with: request) { (_, _, error) in
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
+                completion(.badAuth)
+                return
+            }
+            
             if let error = error {
-                print("Error POSTing item to server: \(error)")
-                completion(error)
+                NSLog("Error POSTing item to server: \(error)")
+                completion(.otherError)
                 return
              }
+            
+            guard let data = data else {
+                completion(.badData)
+                return
+            }
+            
+            do {
+                let itemId = try JSONDecoder().decode(ItemId.self, from: data)
+                let _ = try decode(jwt: "\(itemId.id)")
+                self.item?.id = itemId
+            } catch {
+                NSLog("Error decoding item id")
+                completion(.noDecode)
+                return
+            }
             completion(nil)
             
         } .resume()
+//    func logIn(email: String, password: String, completion: @escaping (NetworkError?) -> Void) {
+//
+//        let logInURL = baseURL.appendingPathComponent("login")
+//        var request = URLRequest(url: logInURL)
+//        request.httpMethod = HTTPMethod.post.rawValue
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//
+//        let userParams = ["email": email, "password": password] as [String: Any]
+//        do {
+//            let json = try JSONSerialization.data(withJSONObject: userParams, options: .prettyPrinted)
+//            request.httpBody = json
+//        } catch {
+//            NSLog("Error encoding JSON")
+//        }
+//
+//        URLSession.shared.dataTask(with: request) {(data, response, error) in
+//            if let response = response as? HTTPURLResponse,
+//                response.statusCode != 200 {
+//
+//                completion(.badAuth)
+//                return
+//            }
+//            if let _ = error {
+//                completion(.otherError)
+//                return
+//            }
+//            guard let data = data else {
+//                completion(.badData)
+//                return
+//            }
+//            do {
+//
+//                let bearer = try JSONDecoder().decode(Bearer.self, from: data)
+//                 let _ = try decode(jwt: bearer.token)
+//                self.bearer = bearer
+//            } catch {
+//                NSLog("Error decoding JSON Web token" )
+//                return
+//            }
+//            NSLog("successfully logged in user")
+//            completion(nil)
+//        } .resume()
+//    }
     }
     
-    func read() { // GET
+    func fetchSingleItem(item: Item, completion: @escaping (NetworkError?) -> Void) { // GET
         
+        guard let bearer = userController?.bearer else {
+            completion(.noAuth)
+            return
+        }
+        self.bearer = bearer
+        
+        
+        
+//        let fetchItemURL = baseURL.appendingPathComponent("item/\(id)")
+
+//        GET /api/item/:item_id
+//        -header:
+//            -Authorization : USER_TOKEN -Required
+//        -returns bucket list item by id
+//            *example:
+//                {
+//                  "item": {
+//                    "id": 1,
+//                    "user_id": 1,
+//                    "completed": false,
+//                    "description": "Drive a Ferrari",
+//                    "created": "2019-06-28T15:52:58.870Z"
+//                  }
+//                }
     }
     
     func update() { // POST
