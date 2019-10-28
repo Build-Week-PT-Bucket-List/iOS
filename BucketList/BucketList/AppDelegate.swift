@@ -11,10 +11,15 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+//    var itemController = ItemController()
+//    var userController = UserController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        userController.logIn(email: "test", password: "test") { (_) in
+//            self.itemController.create(user_id: 33, description: "New Item", completed: false)
+//        }
+        
         return true
     }
 
