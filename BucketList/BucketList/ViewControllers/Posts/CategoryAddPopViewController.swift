@@ -16,7 +16,7 @@ class CategoryAddPopViewController: UIViewController {
     @IBOutlet weak var popNameTextField: UITextField!
     @IBOutlet weak var popView: UIView!
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
